@@ -1,3 +1,4 @@
+from __future__ import print_function
 from .panda import panda
 import time
 import pandas as pd
