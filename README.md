@@ -22,7 +22,7 @@ from pypanda import panda
 from pypanda import lioness
 import pandas as pd
 #run panda
-p = panda('../ToyData/ToyExpressionData.txt', '../ToyData/ToyMotifData.txt', '../ToyData/ToyPPIData.txt', remove_missing=False)
+p = panda('ToyData/ToyExpressionData.txt', 'ToyData/ToyMotifData.txt', 'ToyData/ToyPPIData.txt', remove_missing=False)
 #save results
 p.save_panda_results(file = 'Toy_Panda.pairs')
 #calculate indegree
