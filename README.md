@@ -8,8 +8,8 @@ Glass K, Huttenhower C, Quackenbush J, Yuan GC. Passing Messages Between Biologi
 
 ##### Installation
 
-'''no-highlight
+```no-highlight
 git clone https://github.com/davidvi/pypanda.git
 cd pypanda
 sudo python setup.py install
-'''
+```
