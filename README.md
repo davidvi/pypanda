@@ -12,7 +12,7 @@ _Glass K, Huttenhower C, Quackenbush J, Yuan GC. Passing Messages Between Biolog
 ```no-highlight
 git clone https://github.com/davidvi/pypanda.git
 cd pypanda
-sudo python setup.py develop
+sudo python setup.py install
 ```
 
 ##### Usage
