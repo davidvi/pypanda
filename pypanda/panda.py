@@ -142,6 +142,7 @@ class panda(object):
         genes = np.tile(self.gene_names, (len(self.unique_tfs), 1)).transpose().flatten()
         motif = self.motif_matrix.transpose().flatten()
         force = self.panda_network.transpose().flatten()
+        self.flat_panda_network = force
         self.export_panda_results = pd.DataFrame({'tf':tfs, 'gene': genes,'motif': motif, 'force': force})
         self.export_panda_results = self.export_panda_results[['tf', 'gene', 'motif', 'force']]
     def save_panda_results(self, file = 'panda.pairs'):

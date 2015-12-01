@@ -4,8 +4,9 @@ import pandas as pd
 
 #run panda
 p = panda('../ToyData/ToyExpressionData.txt', '../ToyData/ToyMotifData.txt', '../ToyData/ToyPPIData.txt', remove_missing=False)
+#p = panda('normalized_short_processed_data_names.txt', 'normalized_short_motif.txt', 'normalized_short_protein.txt', remove_missing=True)
 #save results
-p.save_panda_results(file = 'Toy_Panda.pairs')
+p.save_panda_results(file = 'toy_Panda.pairs')
 #calculate indegree
 indegree = p.return_panda_indegree()
 print indegree.head()
@@ -15,4 +16,4 @@ print outdegree.head()
 #run lioness
 l = lioness(p)
 #save results
-l.save_lioness_results(file = 'Toy_Lioness.txt')
+l.save_lioness_results(file = 'toy_Lioness.txt')
