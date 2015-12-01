@@ -30,7 +30,7 @@ class panda(object):
         #pearson correlation
         self.correlation_matrix = np.corrcoef(self.expression_matrix)
         #run panda algorithm
-        self.panda_network = self.panda_loop(self.correlation_matrix, self.motif_matrix, self.ppi_matrix, step_print = True)
+        self.panda_network = self.panda_loop(self.correlation_matrix, self.motif_matrix, self.ppi_matrix, step_print = False)
         #create data frame from results
         self.__panda_results_data_frame()
     def __remove_missing(self):
