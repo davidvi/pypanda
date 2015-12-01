@@ -1,4 +1,6 @@
-from setuptools import setup
+import pypanda
+
+from setuptools import setup, find_packages
 
 setup(name='pypanda',
     version='0.1',
