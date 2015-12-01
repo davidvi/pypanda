@@ -1,5 +1,3 @@
-import pypanda
-
 from setuptools import setup, find_packages
 
 setup(name='pypanda',
@@ -11,7 +9,6 @@ setup(name='pypanda',
     license='MIT',
     packages=['pypanda'],
     install_requires=['pandas',
-    'numpy',
-    'functools',
+    'numpy'
     ],
     zip_safe=False)
