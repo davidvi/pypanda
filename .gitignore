@@ -12,3 +12,4 @@ test/eh_1000_before_shape.txt
 test/*.m
 test/*_LIONESSNetworks.txt
 test/*_Lioness.txt
+test/*.png

@@ -1,11 +1,13 @@
 from __future__ import print_function
+
 import pandas as pd
 import numpy as np
+
 import functools
 import time
 import math
 
-class panda(object):
+class Panda(object):
     '''Import and run PANDA algorithm.'''
     def __init__(self, expression_file, motif_file, ppi_file=None, remove_missing=False):
         '''Load expression, motif and optional ppi data.'''
@@ -33,6 +35,7 @@ class panda(object):
         self.panda_network = self.panda_loop(self.correlation_matrix, self.motif_matrix, self.ppi_matrix, step_print = False)
         #create data frame from results
         self.__panda_results_data_frame()
+        return None
     def __remove_missing(self):
         '''Remove genes and tfs not present in all files.'''
         #remove expression not in motif
@@ -46,12 +49,14 @@ class panda(object):
             self.motif_unique_tfs = sorted(list(set(self.motif_data[0])))
             self.ppi_data = self.ppi_data[self.ppi_data[0].isin(self.motif_unique_tfs)]
             self.ppi_data = self.ppi_data[self.ppi_data[1].isin(self.motif_unique_tfs)]
+        return None
     def __expression_data_to_matrix(self):
         '''Create a numpy matrix with the expression data.'''
         self.gene_names = list(self.expression_data[0])
         self.num_genes = len(self.gene_names)
         self.expression_data = self.expression_data[range(1, len(self.expression_data.columns))]
         self.expression_matrix = np.matrix(self.expression_data.as_matrix())
+        return None
     def __motif_data_to_matrix(self):
         '''Create a numpy matrix with motif data.'''
         def match(a,b):
@@ -66,6 +71,7 @@ class panda(object):
         idx_genes = map(functools.partial(match, b = self.gene_names), self.motif_data[1])
         idx = np.ravel_multi_index((idx_tfs, idx_genes), self.motif_matrix.shape)
         self.motif_matrix.ravel()[idx] = self.motif_data[2]
+        return None
     def __ppi_data_to_matrix(self):
         '''Create a numpy matrix with ppi data.'''
         def match(a,b):
@@ -79,6 +85,7 @@ class panda(object):
         self.ppi_matrix.ravel()[idx] = self.ppi_data[2]
         idx = np.ravel_multi_index((idx_tf2, idx_tf1), self.ppi_matrix.shape)
         self.ppi_matrix.ravel()[idx] = self.ppi_data[2]
+        return None
     def panda_loop(self, correlation_matrix, motif_matrix, ppi_matrix, step_print = False):
         '''Run panda algorithm.'''
         def normalize_network(x):
@@ -145,9 +152,11 @@ class panda(object):
         self.flat_panda_network = force
         self.export_panda_results = pd.DataFrame({'tf':tfs, 'gene': genes,'motif': motif, 'force': force})
         self.export_panda_results = self.export_panda_results[['tf', 'gene', 'motif', 'force']]
+        return None
     def save_panda_results(self, file = 'panda.pairs'):
         '''Write results to file.'''
         self.export_panda_results.to_csv(file,  index=False, header=False, sep="\t")
+        return None
     def return_panda_indegree(self):
         '''Return Panda indegree.'''
         subset_indegree = self.export_panda_results[[1,3]]

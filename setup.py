@@ -9,6 +9,7 @@ setup(name='pypanda',
     license='MIT',
     packages=['pypanda'],
     install_requires=['pandas',
-    'numpy'
+    'numpy',
+    'networkx'
     ],
     zip_safe=False)

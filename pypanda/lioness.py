@@ -1,12 +1,14 @@
 from __future__ import print_function
-from .panda import panda
+
+from .Panda import Panda
+
 import time
 import pandas as pd
 import numpy as np
 import functools
 import math
 
-class lioness(panda):
+class Lioness(Panda):
     def __init__(self, panda_data):
         '''Import values from panda for lioness.'''
         self.expression_matrix = panda_data.expression_matrix
@@ -21,6 +23,7 @@ class lioness(panda):
         self.__lioness()
         #create result data frame
         self.__lioness_results_data_frame()
+        return None
     def __lioness(self):
         '''Run lioness on network.'''
         def lioness_loop(condition, number_conditions, flat_panda_network, expression_matrix, motif_matrix, ppi_matrix):
@@ -48,6 +51,8 @@ class lioness(panda):
     def __lioness_results_data_frame(self):
         ''''Results to data frame.'''
         self.export_lioness_results = pd.DataFrame(self.lioness_network)
+        return None
     def save_lioness_results(self, file = 'lioness.txt'):
         '''Write lioness results to file.'''
         self.export_lioness_results.to_csv(file, index=False, header=False, sep="\t")
+        return None
