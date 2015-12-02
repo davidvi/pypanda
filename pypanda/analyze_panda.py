@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 import networkx as nx
 
-class AnalyzePanda(panda):
+class AnalyzePanda(Panda):
     '''Network plot.'''
     def __init__(self, panda_data):
         '''Load variables from panda.'''
@@ -17,3 +17,4 @@ class AnalyzePanda(panda):
 
         return None
     def __shape_plot_network():
+        return None

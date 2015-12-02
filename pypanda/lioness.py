@@ -1,6 +1,6 @@
 from __future__ import print_function
 
-from .Panda import Panda
+from .panda import Panda
 
 import time
 import pandas as pd

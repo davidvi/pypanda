@@ -1,3 +1,3 @@
-from .Panda import Panda
-from .Lioness import Lioness
-from .AnalyzePanda import AnalyzePanda
+from .panda import Panda
+from .lioness import Lioness
+from .analyze_panda import AnalyzePanda
