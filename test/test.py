@@ -1,5 +1,6 @@
 from pypanda import Panda
 from pypanda import Lioness
+from pypanda import AnalyzePanda
 import pandas as pd
 
 #run panda
@@ -7,13 +8,16 @@ p = Panda('../ToyData/ToyExpressionData.txt', '../ToyData/ToyMotifData.txt', '..
 #p = panda('normalized_short_processed_data_names.txt', 'normalized_short_motif.txt', 'normalized_short_protein.txt', remove_missing=True)
 #save results
 p.save_panda_results(file = 'toy_Panda.pairs')
+#panda network plot top 100
+a = AnalyzePanda(p)
+a.top_network_plot()
 #calculate indegree
-indegree = p.return_panda_indegree()
-print indegree.head()
+#indegree = p.return_panda_indegree()
+#print indegree.head()
 #calculate outdegree
-outdegree = p.return_panda_outdegree()
-print outdegree.head()
+#outdegree = p.return_panda_outdegree()
+#print outdegree.head()
 #run lioness
-l = Lioness(p)
+#l = Lioness(p)
 #save results
-l.save_lioness_results(file = 'toy_Lioness.txt')
+#l.save_lioness_results(file = 'toy_Lioness.txt')
