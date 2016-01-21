@@ -13,3 +13,4 @@ test/*.m
 test/*_LIONESSNetworks.txt
 test/*_Lioness.txt
 test/*.png
+test/

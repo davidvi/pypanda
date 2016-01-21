@@ -1,6 +1,6 @@
 ## pypanda
 Python implementation of PANDA (Passing Attributes between Networks for Data Assimilation)  
-  
+
 _Glass K, Huttenhower C, Quackenbush J, Yuan GC. Passing Messages Between Biological Networks to Refine Predicted Interactions, PLoS One, 2013 May 31;8(5):e64832_
 
 ##### Table of Contents
@@ -17,7 +17,7 @@ sudo python setup.py install
 
 ##### Usage
 ```no-highlight
-#import pypanda library 
+#import pypanda library
 from pypanda import panda
 from pypanda import lioness
 import pandas as pd
