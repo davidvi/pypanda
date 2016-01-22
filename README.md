@@ -10,9 +10,10 @@ _Glass K, Huttenhower C, Quackenbush J, Yuan GC. Passing Messages Between Biolog
 
 ##### Panda implementation
 To find agreement between the three input networks first the responsibility (R) is calculated.
-![equation](http://latex.codecogs.com/gif.download?A_%7Bij%7D%5E%7B%28t%29%7D%3DT%28W_%7Bi.%7D%5E%7B%28t-1%29%7D%2C%20C_%7B.j%7D%5E%7B%28t-1%29%7D%29)
+![equation](http://bit.ly/1nda5ZY)
 Thereafter availability (A) is calculated.
 ![equation](http://latex.codecogs.com/gif.download?A_%7Bij%7D%5E%7B%28t%29%7D%3DT%28W_%7Bi.%7D%5E%7B%28t-1%29%7D%2C%20C_%7B.j%7D%5E%7B%28t-1%29%7D%29)
+
 
 ##### Installation
 ```no-highlight
