@@ -4,11 +4,14 @@ Python implementation of PANDA (Passing Attributes between Networks for Data Ass
 _Glass K, Huttenhower C, Quackenbush J, Yuan GC. Passing Messages Between Biological Networks to Refine Predicted Interactions, PLoS One, 2013 May 31;8(5):e64832_
 
 ##### Table of Contents
+[Panda algorithm](#panda)
 [Installation](#installation)  
 [Usage](#usage)  
 
-##### Installation
+##### Panda implementation
+![equation](http://www.sciweavers.org/tex2img.php?eq=1%2Bsin%28mc%5E2%29&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=)
 
+##### Installation
 ```no-highlight
 git clone https://github.com/davidvi/pypanda.git
 cd pypanda
