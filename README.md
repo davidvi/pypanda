@@ -9,10 +9,20 @@ _Glass K, Huttenhower C, Quackenbush J, Yuan GC. Passing Messages Between Biolog
 [Usage](#usage)  
 
 ##### Panda implementation
-To find agreement between the three input networks first the responsibility (R) is calculated.
-![Image](http://www.sciweavers.org/download/Tex2Img_1453458635.jpg)
-Thereafter availability (A) is calculated.
-![equation](http://latex.codecogs.com/gif.download?A_%7Bij%7D%5E%7B%28t%29%7D%3DT%28W_%7Bi.%7D%5E%7B%28t-1%29%7D%2C%20C_%7B.j%7D%5E%7B%28t-1%29%7D%29)
+To find agreement between the three input networks first the responsibility (R) is calculated.  
+![Image](http://www.sciweavers.org/download/Tex2Img_1453458635.jpg)  
+Thereafter availability (A) is calculated.  
+![Image](http://www.sciweavers.org/download/Tex2Img_1453459119.jpg)  
+Availability and responsibility are combined with the following formula.  
+![Image](http://www.sciweavers.org/download/Tex2Img_1453459183.jpg)  
+Protein cooperativity and gene co-regulatory networks are updated.  
+![Image](http://www.sciweavers.org/download/Tex2Img_1453459226.jpg)  
+![Image](http://www.sciweavers.org/download/Tex2Img_1453459305.jpg)  
+P and C are updated to satisfy convergence.  
+![Image](http://www.sciweavers.org/download/Tex2Img_1453459359.jpg)  
+![Image](http://www.sciweavers.org/download/Tex2Img_1453459389.jpg)  
+Hamming distance is calculated every iteration.
+![Image](http://www.sciweavers.org/download/Tex2Img_1453459429.jpg)  
 
 
 ##### Installation
