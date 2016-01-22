@@ -9,7 +9,7 @@ _Glass K, Huttenhower C, Quackenbush J, Yuan GC. Passing Messages Between Biolog
 [Usage](#usage)  
 
 ##### Panda implementation
-![equation](http://www.sciweavers.org/tex2img.php?eq=1%2Bsin%28mc%5E2%29&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=)
+![equation](http://latex.codecogs.com/gif.latex?R_%7Bij%7D%5E%7B%28t%29%7D%3DT%28P_%7Bi.%7D%5E%7B%28t-1%29%7D%2C%20W_%7B.j%7D%5E%7B%28t-1%29%7D%29)
 
 ##### Installation
 ```no-highlight
