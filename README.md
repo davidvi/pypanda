@@ -28,12 +28,12 @@ Protein cooperativity and gene co-regulatory networks are updated.
 
 P and C are updated to satisfy convergence.  
 
-<img src="https://github.com/davidvi/pypanda/raw/develop/img/p.png" height="30">
-<img src="https://github.com/davidvi/pypanda/raw/develop/img/c.png" height="30">
+<img src="https://github.com/davidvi/pypanda/raw/develop/img/p.png" height="30">  
+<img src="https://github.com/davidvi/pypanda/raw/develop/img/c.png" height="30">  
 
 Hamming distance is calculated every iteration.  
 
-<img src="https://github.com/davidvi/pypanda/raw/develop/img/hamming.png" height="30">
+<img src="https://github.com/davidvi/pypanda/raw/develop/img/hamming.png" height="30">  
 
 
 ##### Installation
