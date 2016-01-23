@@ -11,7 +11,7 @@ _Glass K, Huttenhower C, Quackenbush J, Yuan GC. Passing Messages Between Biolog
 ##### Panda implementation
 To find agreement between the three input networks first the responsibility (R) is calculated.  
 
-![Image](https://github.com/davidvi/pypanda/raw/develop/img/responsibility.png)  
+<img src="https://github.com/davidvi/pypanda/raw/develop/img/responsibility.png" height="20">  
 
 Thereafter availability (A) is calculated.  
 
