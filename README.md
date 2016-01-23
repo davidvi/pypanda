@@ -11,30 +11,30 @@ _Glass K, Huttenhower C, Quackenbush J, Yuan GC. Passing Messages Between Biolog
 ##### Panda implementation
 To find agreement between the three input networks first the responsibility (R) is calculated.  
 
-![Image](http://www.sciweavers.org/download/Tex2Img_1453458635.jpg)  
+![Image](https://github.com/davidvi/pypanda/raw/develop/img/responsibility.png)  
 
 Thereafter availability (A) is calculated.  
 
-![Image](http://www.sciweavers.org/download/Tex2Img_1453459119.jpg)  
+![Image](https://github.com/davidvi/pypanda/raw/develop/img/availability.png)  
 
 Availability and responsibility are combined with the following formula.  
 
-![Image](http://www.sciweavers.org/download/Tex2Img_1453459183.jpg)  
+![Image](https://github.com/davidvi/pypanda/raw/develop/img/combine.png)  
 
 Protein cooperativity and gene co-regulatory networks are updated.  
 
-![Image](http://www.sciweavers.org/download/Tex2Img_1453459226.jpg)  
-![Image](http://www.sciweavers.org/download/Tex2Img_1453459305.jpg)  
+![Image](https://github.com/davidvi/pypanda/raw/develop/img/cooperativity.png)  
+![Image](https://github.com/davidvi/pypanda/raw/develop/img/co-regulatory.png)  
 
 P and C are updated to satisfy convergence.  
 
-![Image](http://www.sciweavers.org/download/Tex2Img_1453459359.jpg)  
-![Image](http://www.sciweavers.org/download/Tex2Img_1453459389.jpg)  
+![Image](https://github.com/davidvi/pypanda/raw/develop/img/p.png)  
+![Image](https://github.com/davidvi/pypanda/raw/develop/img/c.png)  
 
 Hamming distance is calculated every iteration.  
 
-![Image](http://www.sciweavers.org/download/Tex2Img_1453459429.jpg)  
-  
+![Image](https://github.com/davidvi/pypanda/raw/develop/img/hamming.png)  
+
 
 ##### Installation
 ```no-highlight
