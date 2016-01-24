@@ -4,11 +4,11 @@ Python implementation of PANDA (Passing Attributes between Networks for Data Ass
 _Glass K, Huttenhower C, Quackenbush J, Yuan GC. Passing Messages Between Biological Networks to Refine Predicted Interactions, PLoS One, 2013 May 31;8(5):e64832_
 
 ### Table of Contents
-* [Panda implementation](#panda)  
+* [Panda implementation](#panda-implementation)  
 * [Installation](#installation)  
 * [Usage](#usage)  
-  * [iPython](#iPython)  
-  * [Terminal](#terminal)  
+  * [iPython](#run-from-ipython-notebook)  
+  * [Terminal](#run-from-the-terminal)  
 
 ### Panda implementation
 To find agreement between the three input networks first the responsibility (R) is calculated.  
