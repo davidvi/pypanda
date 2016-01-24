@@ -3,12 +3,14 @@ Python implementation of PANDA (Passing Attributes between Networks for Data Ass
 
 _Glass K, Huttenhower C, Quackenbush J, Yuan GC. Passing Messages Between Biological Networks to Refine Predicted Interactions, PLoS One, 2013 May 31;8(5):e64832_
 
-##### Table of Contents
+### Table of Contents
 * [Panda implementation](#panda)  
 * [Installation](#installation)  
 * [Usage](#usage)  
+..* [iPython](#iPython)  
+..* [Terminal](#terminal)  
 
-##### Panda implementation
+### Panda implementation
 To find agreement between the three input networks first the responsibility (R) is calculated.  
 
 <img src="https://github.com/davidvi/pypanda/raw/develop/img/responsibility.png" height="30">  
@@ -36,15 +38,15 @@ Hamming distance is calculated every iteration.
 <img src="https://github.com/davidvi/pypanda/raw/develop/img/hamming.png" height="30">  
 
 
-##### Installation
+### Installation
 ```no-highlight
 git clone https://github.com/davidvi/pypanda.git
 cd pypanda
 sudo python setup.py install
 ```
 
-##### Usage
-### Run from iPython notebook
+### Usage
+#### Run from iPython notebook
 Import PyPanda library:
 ```python
 from pypanda import panda
@@ -75,3 +77,4 @@ Save Lioness results:
 ```python
 l.save_lioness_results(file = 'Toy_Lioness.txt')
 ```
+#### Run as program from the terminal
