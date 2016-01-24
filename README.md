@@ -77,4 +77,4 @@ Save Lioness results:
 ```python
 l.save_lioness_results(file = 'Toy_Lioness.txt')
 ```
-#### Run as program from the terminal
+#### Run from the terminal
