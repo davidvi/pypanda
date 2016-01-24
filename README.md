@@ -7,8 +7,8 @@ _Glass K, Huttenhower C, Quackenbush J, Yuan GC. Passing Messages Between Biolog
 * [Panda implementation](#panda)  
 * [Installation](#installation)  
 * [Usage](#usage)  
-..* [iPython](#iPython)  
-..* [Terminal](#terminal)  
+  * [iPython](#iPython)  
+  * [Terminal](#terminal)  
 
 ### Panda implementation
 To find agreement between the three input networks first the responsibility (R) is calculated.  
@@ -31,11 +31,11 @@ Protein cooperativity and gene co-regulatory networks are updated.
 P and C are updated to satisfy convergence.  
 
 <img src="https://github.com/davidvi/pypanda/raw/develop/img/p.png" height="30">  
-<img src="https://github.com/davidvi/pypanda/raw/develop/img/c.png" height="40">  
+<img src="https://github.com/davidvi/pypanda/raw/develop/img/c.png" height="30">  
 
 Hamming distance is calculated every iteration.  
 
-<img src="https://github.com/davidvi/pypanda/raw/develop/img/hamming.png" height="30">  
+<img src="https://github.com/davidvi/pypanda/raw/develop/img/hamming.png" height="40">  
 
 
 ### Installation
