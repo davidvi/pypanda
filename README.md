@@ -1,4 +1,4 @@
-## PyPanda
+## PyPanda (Python Panda)
 Python implementation of PANDA (Passing Attributes between Networks for Data Assimilation)  
 
 _Glass K, Huttenhower C, Quackenbush J, Yuan GC. Passing Messages Between Biological Networks to Refine Predicted Interactions, PLoS One, 2013 May 31;8(5):e64832_
@@ -29,7 +29,7 @@ Protein cooperativity and gene co-regulatory networks are updated.
 P and C are updated to satisfy convergence.  
 
 <img src="https://github.com/davidvi/pypanda/raw/develop/img/p.png" height="30">  
-<img src="https://github.com/davidvi/pypanda/raw/develop/img/c.png" height="30">  
+<img src="https://github.com/davidvi/pypanda/raw/develop/img/c.png" height="40">  
 
 Hamming distance is calculated every iteration.  
 
@@ -44,23 +44,34 @@ sudo python setup.py install
 ```
 
 ##### Usage
-```no-highlight
-#import pypanda library
+### Run from iPython notebook
+Import PyPanda library:
+```python
 from pypanda import panda
 from pypanda import lioness
 import pandas as pd
-#run panda
+```
+Run Panda algorithm:
+```python
 p = panda('ToyData/ToyExpressionData.txt', 'ToyData/ToyMotifData.txt', 'ToyData/ToyPPIData.txt', remove_missing=False)
-#save results
+```
+Save the results:
+```python
 p.save_panda_results(file = 'Toy_Panda.pairs')
-#calculate indegree
+```
+Calculate indegrees for further analysis:
+```python
 indegree = p.return_panda_indegree()
-print indegree.head()
-#calculate outdegree
+```
+Calculate outdegrees for further analysis:
+```python
 outdegree = p.return_panda_outdegree()
-print outdegree.head()
-#run lioness
+```
+Run the Lioness algorithm for single sample networks:
+```python
 l = lioness(p)
-#save results
+```
+Save Lioness results:
+```python
 l.save_lioness_results(file = 'Toy_Lioness.txt')
 ```
