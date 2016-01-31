@@ -4,13 +4,13 @@ Python implementation of PANDA (Passing Attributes between Networks for Data Ass
 _Glass K, Huttenhower C, Quackenbush J, Yuan GC. Passing Messages Between Biological Networks to Refine Predicted Interactions, PLoS One, 2013 May 31;8(5):e64832_
 
 ### Table of Contents
-* [Panda implementation](#panda-implementation)  
+* [Panda implementation](#panda-algorithm)  
 * [Installation](#installation)  
 * [Usage](#usage)  
   * [iPython](#run-from-ipython-notebook)  
   * [Terminal](#run-from-the-terminal)  
 
-### Panda implementation
+### Panda algorithm
 To find agreement between the three input networks first the responsibility (R) is calculated.  
 
 <img src="https://github.com/davidvi/pypanda/raw/develop/img/responsibility.png" height="30">  
@@ -49,13 +49,13 @@ sudo python setup.py install
 #### Run from iPython notebook
 Import PyPanda library:
 ```python
-from pypanda import panda
-from pypanda import lioness
+from pypanda import Panda
+from pypanda import Lioness
 import pandas as pd
 ```
 Run Panda algorithm:
 ```python
-p = panda('ToyData/ToyExpressionData.txt', 'ToyData/ToyMotifData.txt', 'ToyData/ToyPPIData.txt', remove_missing=False)
+p = Panda('ToyData/ToyExpressionData.txt', 'ToyData/ToyMotifData.txt', 'ToyData/ToyPPIData.txt', remove_missing=False)
 ```
 Save the results:
 ```python
@@ -71,10 +71,14 @@ outdegree = p.return_panda_outdegree()
 ```
 Run the Lioness algorithm for single sample networks:
 ```python
-l = lioness(p)
+l = Lioness(p)
 ```
 Save Lioness results:
 ```python
 l.save_lioness_results(file = 'Toy_Lioness.txt')
 ```
 #### Run from the terminal
+
+```
+$ pypanda_run -e ToyData/ToyExpressionData.txt -m ToyData/ToyMotifData.txt -p ToyData/ToyPPIData.txt -r True -o test_panda.txt
+```

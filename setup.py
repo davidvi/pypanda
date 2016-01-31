@@ -13,4 +13,5 @@ setup(name='pypanda',
     'networkx',
     'matplotlib'
     ],
+    scripts=['bin/pypanda'],
     zip_safe=False)
