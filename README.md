@@ -46,6 +46,10 @@ sudo python setup.py install
 ```
 
 ### Usage
+#### Run from the terminal
+```
+$ pypanda -e ToyData/ToyExpressionData.txt -m ToyData/ToyMotifData.txt -p ToyData/ToyPPIData.txt -r True -o test_panda.txt
+```
 #### Run from iPython notebook
 Import PyPanda library:
 ```python
@@ -76,9 +80,4 @@ l = Lioness(p)
 Save Lioness results:
 ```python
 l.save_lioness_results(file = 'Toy_Lioness.txt')
-```
-#### Run from the terminal
-
-```
-$ pypanda_run -e ToyData/ToyExpressionData.txt -m ToyData/ToyMotifData.txt -p ToyData/ToyPPIData.txt -r True -o test_panda.txt
 ```
