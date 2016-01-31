@@ -19,6 +19,7 @@ def main(argv):
     -p (optional) pair file of PPI edges
     -r (optional) remove missing values (default is Fales)
     -o (required) output file
+    -l (optional) output lioness single sample network
     '''
     #create variables
     expression_data = None
@@ -26,15 +27,23 @@ def main(argv):
     ppi = None
     remove_missing = False
     output_file = None
+    lioness_output_file = None
+    help_text = 'pypanda options:\n\
+                \t-e (required)<expression_data.txt>\n\
+                \t-m (required)<motif_data.txt>\n\
+                \t-p (optional)<ppi_data.txt>\n\
+                \t-r (optional)<remove missing (True/False)>\n\
+                \t-o (required)<output_file_name>\n\
+                \t-l (optional)<lioness_output_file_name>'
     #get input options
     try:
-        opts, args = getopt.getopt(argv, 'he:m:p:r:o:', ['help', 'expression=', 'motif=', 'ppi=', 'remove=', 'out='])
+        opts, args = getopt.getopt(argv, 'he:m:p:r:o:l:', ['help', 'expression=', 'motif=', 'ppi=', 'remove=', 'out='])
     except getopt.GetoptError:
-        print 'Usage: pypanda -e <expression_data.txt> -m <motif_data.txt> -p <ppi_data.txt> -r <remove missing (True/False)> -o <output_file_name>'
+        print help_text
         sys.exit()
     for opt, arg in opts:
         if opt == '-h':
-            print 'Usage: pypanda -e <expression_data.txt> -m <motif_data.txt> -p <ppi_data.txt> -r <remove missing (True/False)> -o <output_file_name>'
+            print help_text
             sys.exit()
         if opt == '-e':
             expression_data = arg
@@ -49,16 +58,25 @@ def main(argv):
                 remove_missing = False
         if opt == '-o':
             output_file = arg
+        if opt == '-l':
+            lioness_output_file = arg
     #check if required options are given
     if expression_data == None or motif == None or output_file == None:
         print 'Missing input'
-        print 'Usage: pypanda -e <expression_data.txt> -m <motif_data.txt> -p <ppi_data.txt> -r <remove missing (True/False)> -o <output_file_name>'
+        print help_text
         sys.exit()
 
     #run panda
     p = Panda(expression_data, motif, ppi, remove_missing=remove_missing)
     #save results
     p.save_panda_results(file=output_file)
+    print 'Finished Panda run...'
+    #run lioness
+    if lioness_output_file!=None:
+        l = Lioness(p)
+        l.save_lioness_results(file=lioness_output_file)
+        print 'Finished Lioness run...'
+
     return None
 
 if __name__ == '__main__':

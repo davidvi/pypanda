@@ -47,8 +47,19 @@ sudo python setup.py install
 
 ### Usage
 #### Run from the terminal
+PyPanda can be run directly from the terminal with the following options:
 ```
-$ pypanda -e ToyData/ToyExpressionData.txt -m ToyData/ToyMotifData.txt -p ToyData/ToyPPIData.txt -r True -o test_panda.txt
+-h help
+-e (required) expression values
+-m (required) pair file of motif edges
+-p (optional) pair file of PPI edges
+-r (optional) remove missing values (default is Fales)
+-o (required) output file
+-l (optional) output lioness single sample network
+```
+To run PyPanda on the example data:
+```
+$ pypanda -e ToyData/ToyExpressionData.txt -m ToyData/ToyMotifData.txt -p ToyData/ToyPPIData.txt -r True -o test_panda.txt -l test_lioness.txt
 ```
 #### Run from iPython notebook
 Import PyPanda library:
