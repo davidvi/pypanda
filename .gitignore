@@ -15,3 +15,6 @@ test/*_Lioness.txt
 test/*.png
 test/
 .pypirc
+build/
+dist/
+.pypirc

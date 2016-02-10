@@ -32,7 +32,7 @@ class Panda(object):
         #pearson correlation
         self.correlation_matrix = np.corrcoef(self.expression_matrix)
         #run panda algorithm
-        self.panda_network = self.panda_loop(self.correlation_matrix, self.motif_matrix, self.ppi_matrix, step_print = False)
+        self.panda_network = self.panda_loop(self.correlation_matrix, self.motif_matrix, self.ppi_matrix, step_print = True)
         #create data frame from results
         self.__panda_results_data_frame()
         return None
@@ -86,7 +86,7 @@ class Panda(object):
         idx = np.ravel_multi_index((idx_tf2, idx_tf1), self.ppi_matrix.shape)
         self.ppi_matrix.ravel()[idx] = self.ppi_data[2]
         return None
-    def panda_loop(self, correlation_matrix, motif_matrix, ppi_matrix, step_print = False):
+    def panda_loop(self, correlation_matrix, motif_matrix, ppi_matrix, step_print = True):
         '''Run panda algorithm.'''
         def normalize_network(x):
             mean_col = np.mean(x, axis = 0 )
