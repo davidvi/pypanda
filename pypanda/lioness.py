@@ -39,6 +39,9 @@ class Lioness(Panda):
         lioness_loop_time = time.time()
         number_conditions = self.expression_matrix.shape[1]
         self.lioness_network = np.zeros((self.num_genes*self.num_tfs, number_conditions))
+        if number_conditions < 4:
+            print('Running lioness requires at least 4 samples.')
+            return None
         for condition in range(0, number_conditions):
             self.lioness_network[:,condition] = lioness_loop(condition = condition,
                                                             number_conditions = number_conditions,
@@ -48,6 +51,7 @@ class Lioness(Panda):
                                                             ppi_matrix = self.ppi_matrix)
         self.lioness_network = np.matrix(self.lioness_network)
         print('running lioness took: %s seconds' % (time.time() - lioness_loop_time))
+        return None
     def __lioness_results_data_frame(self):
         ''''Results to data frame.'''
         self.export_lioness_results = pd.DataFrame(self.lioness_network)

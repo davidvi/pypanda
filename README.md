@@ -53,13 +53,13 @@ PyPanda can be run directly from the terminal with the following options:
 -e (required) expression values
 -m (required) pair file of motif edges
 -p (optional) pair file of PPI edges
--r (optional) remove missing values (default is Fales)
+-f (optional) remove missing values (default is Fales)
 -o (required) output file
--l (optional) output lioness single sample network
+-q (optional) output lioness single sample network
 ```
 To run PyPanda on the example data:
 ```
-$ pypanda -e ToyData/ToyExpressionData.txt -m ToyData/ToyMotifData.txt -p ToyData/ToyPPIData.txt -r True -o test_panda.txt -l test_lioness.txt
+$ pypanda -e ToyData/ToyExpressionData.txt -m ToyData/ToyMotifData.txt -p ToyData/ToyPPIData.txt -f True -o test_panda.txt -q test_lioness.txt
 ```
 #### Run from iPython notebook
 Import PyPanda library:

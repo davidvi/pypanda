@@ -17,9 +17,9 @@ def main(argv):
     -e (required) expression values
     -m (required) pair file of motif edges
     -p (optional) pair file of PPI edges
-    -r (optional) remove missing values (default is Fales)
+    -f (optional) remove missing values (default is Fales)
     -o (required) output file
-    -l (optional) output lioness single sample network
+    -q (optional) output lioness single sample network
     '''
     #create variables
     expression_data = None
@@ -32,12 +32,12 @@ def main(argv):
                 \t-e (required)<expression_data.txt>\n\
                 \t-m (required)<motif_data.txt>\n\
                 \t-p (optional)<ppi_data.txt>\n\
-                \t-r (optional)<remove missing (True/False)>\n\
+                \t-f (optional)<remove missing (True/False)>\n\
                 \t-o (required)<output_file_name>\n\
-                \t-l (optional)<lioness_output_file_name>'
+                \t-q (optional)<lioness_output_file_name>'
     #get input options
     try:
-        opts, args = getopt.getopt(argv, 'he:m:p:r:o:l:', ['help', 'expression=', 'motif=', 'ppi=', 'remove=', 'out='])
+        opts, args = getopt.getopt(argv, 'he:m:p:f:o:q:', ['help', 'expression=', 'motif=', 'ppi=', 'remove=', 'out='])
     except getopt.GetoptError:
         print help_text
         sys.exit()
@@ -51,14 +51,14 @@ def main(argv):
             motif = arg
         if opt == '-p':
             ppi = arg
-        if opt == '-r':
+        if opt == '-f':
             if arg == 'True':
                 remove_missing = True
             elif arg == 'False':
                 remove_missing = False
         if opt == '-o':
             output_file = arg
-        if opt == '-l':
+        if opt == '-q':
             lioness_output_file = arg
     #check if required options are given
     if expression_data == None or motif == None or output_file == None:
