@@ -15,7 +15,7 @@ def main(argv):
     Run pypanda.
     -h help
     -e (required) expression values
-    -m (required) pair file of motif edges
+    -m (optional) pair file of motif edges, when not provided analysis continues with pearson correlation matrix
     -p (optional) pair file of PPI edges
     -f (optional) remove missing values (default is Fales)
     -o (required) output file
@@ -30,7 +30,7 @@ def main(argv):
     lioness_output_file = None
     help_text = 'pypanda options:\n\
                 \t-e (required)<expression_data.txt>\n\
-                \t-m (required)<motif_data.txt>\n\
+                \t-m (optional)<motif_data.txt>\n\
                 \t-p (optional)<ppi_data.txt>\n\
                 \t-f (optional)<remove missing (True/False)>\n\
                 \t-o (required)<output_file_name>\n\
@@ -61,7 +61,7 @@ def main(argv):
         if opt == '-q':
             lioness_output_file = arg
     #check if required options are given
-    if expression_data == None or motif == None or output_file == None:
+    if expression_data == None or output_file == None:
         print 'Missing input'
         print help_text
         sys.exit()

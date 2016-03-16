@@ -13,7 +13,10 @@ class Panda(object):
         '''Load expression, motif and optional ppi data.'''
         #load data from provided files
         self.expression_data = pd.read_table(expression_file, sep='\t', header=None, comment='#')
-        self.motif_data = pd.read_table(motif_file, sep='\t', header=None, comment='#')
+        if motif_file is not None:
+            self.motif_data = pd.read_table(motif_file, sep='\t', header=None, comment='#')
+        else:
+            self.motif_data = None
         if ppi_file is not None:
             self.ppi_data = pd.read_table(ppi_file, sep='\t', header=None, comment='#')
         else:
@@ -24,17 +27,25 @@ class Panda(object):
         #expression data to matrix
         self.__expression_data_to_matrix()
         #motif data to matrix
-        self.__motif_data_to_matrix()
+        if self.motif_data is not None:
+            self.__motif_data_to_matrix()
         #ppi data to matrix
-        self.ppi_matrix = np.identity(self.num_tfs)
-        if self.ppi_data is not None:
-            self.__ppi_data_to_matrix()
+        if self.motif_data is not None:
+            self.ppi_matrix = np.identity(self.num_tfs)
+            if self.ppi_data is not None:
+                self.__ppi_data_to_matrix()
         #pearson correlation
         self.correlation_matrix = np.corrcoef(self.expression_matrix)
         #run panda algorithm
-        self.panda_network = self.panda_loop(self.correlation_matrix, self.motif_matrix, self.ppi_matrix, step_print = True)
+        if self.motif_data is not None:
+            self.panda_network = self.panda_loop(self.correlation_matrix, self.motif_matrix, self.ppi_matrix, step_print = True)
+        else:
+            self.panda_network = self.correlation_matrix
         #create data frame from results
-        self.__panda_results_data_frame()
+        if self.motif_data is not None:
+            self.__panda_results_data_frame()
+        else:
+            self.__pearson_results_data_frame()
         return None
     def __remove_missing(self):
         '''Remove genes and tfs not present in all files.'''
@@ -152,6 +163,13 @@ class Panda(object):
         self.flat_panda_network = force
         self.export_panda_results = pd.DataFrame({'tf':tfs, 'gene': genes,'motif': motif, 'force': force})
         self.export_panda_results = self.export_panda_results[['tf', 'gene', 'motif', 'force']]
+        return None
+    def __pearson_results_data_frame(self):
+        '''Results to data frame.'''
+        genes_1 = np.tile(self.gene_names, (len(self.gene_names), 1)).transpose().flatten()
+        genes_2 = np.tile(self.gene_names, (len(self.gene_names), 1)).flatten()
+        self.flat_panda_network = self.panda_network.transpose().flatten()
+        self.export_panda_results = pd.DataFrame({'gene_1':genes_1, 'gene_2':genes_2, 'pierson':self.flat_panda_network})
         return None
     def save_panda_results(self, file = 'panda.pairs'):
         '''Write results to file.'''
