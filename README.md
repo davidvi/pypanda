@@ -51,7 +51,7 @@ PyPanda can be run directly from the terminal with the following options:
 ```
 -h help
 -e (required) expression values
--m (required) pair file of motif edges
+-m (optional) pair file of motif edges, when not provided analysis continues with Pearson correlation matrix
 -p (optional) pair file of PPI edges
 -f (optional) remove missing values (default is Fales)
 -o (required) output file
@@ -61,6 +61,10 @@ To run PyPanda on the example data:
 ```
 $ pypanda -e ToyData/ToyExpressionData.txt -m ToyData/ToyMotifData.txt -p ToyData/ToyPPIData.txt -f True -o test_panda.txt -q test_lioness.txt
 ```
+To reconstruct a single sample Lioness Pearson correlation network:
+```
+$ pypanda -e ToyData/ToyExpressionData.txt -o test_panda_pearson.txt -q test_lioness_pearson.txt
+```
 #### Run from iPython notebook
 Import PyPanda library:
 ```python
@@ -68,7 +72,7 @@ from pypanda import Panda
 from pypanda import Lioness
 import pandas as pd
 ```
-Run Panda algorithm:
+Run Panda algorithm, leave out motif and PPI data to use Pearson correlation network:
 ```python
 p = Panda('ToyData/ToyExpressionData.txt', 'ToyData/ToyMotifData.txt', 'ToyData/ToyPPIData.txt', remove_missing=False)
 ```

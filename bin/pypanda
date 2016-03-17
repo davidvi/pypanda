@@ -30,7 +30,7 @@ def main(argv):
     lioness_output_file = None
     help_text = 'pypanda options:\n\
                 \t-e (required)<expression_data.txt>\n\
-                \t-m (optional)<motif_data.txt>\n\
+                \t-m (optional, when not provided Pearson correlation network is used)<motif_data.txt>\n\
                 \t-p (optional)<ppi_data.txt>\n\
                 \t-f (optional)<remove missing (True/False)>\n\
                 \t-o (required)<output_file_name>\n\
