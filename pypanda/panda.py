@@ -166,8 +166,8 @@ class Panda(object):
         return None
     def __pearson_results_data_frame(self):
         '''Results to data frame.'''
-        genes_1 = np.tile(self.gene_names, (len(self.gene_names), 1)).transpose().flatten()
-        genes_2 = np.tile(self.gene_names, (len(self.gene_names), 1)).flatten()
+        genes_1 = np.tile(self.gene_names, (len(self.gene_names), 1)).flatten()
+        genes_2 = np.tile(self.gene_names, (len(self.gene_names), 1)).transpose().flatten()
         self.flat_panda_network = self.panda_network.transpose().flatten()
         self.export_panda_results = pd.DataFrame({'gene_1':genes_1, 'gene_2':genes_2, 'pierson':self.flat_panda_network})
         return None
