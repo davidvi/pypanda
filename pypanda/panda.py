@@ -169,7 +169,8 @@ class Panda(object):
         genes_1 = np.tile(self.gene_names, (len(self.gene_names), 1)).flatten()
         genes_2 = np.tile(self.gene_names, (len(self.gene_names), 1)).transpose().flatten()
         self.flat_panda_network = self.panda_network.transpose().flatten()
-        self.export_panda_results = pd.DataFrame({'gene_1':genes_1, 'gene_2':genes_2, 'pierson':self.flat_panda_network})
+        self.export_panda_results = pd.DataFrame({'tf':genes_1, 'gene':genes_2, 'force':self.flat_panda_network})
+        self.export_panda_results = self.export_panda_results[['tf', 'gene', 'force']]
         return None
     def save_panda_results(self, file = 'panda.pairs'):
         '''Write results to file.'''

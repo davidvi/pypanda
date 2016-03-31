@@ -16,6 +16,7 @@ class AnalyzePanda(Panda):
     def top_network_plot(self, top = 100, file = 'panda_top_100.png'):
         '''Select top genes.'''
         subset_panda_results = self.panda_results.sort(['force'], ascending = [0])
+        subset_panda_results = subset_panda_results[subset_panda_results.tf != subset_panda_results.gene]
         subset_panda_results = subset_panda_results[0:top]
         self.__shape_plot_network(subset_panda_results = subset_panda_results, file = file)
         return None
@@ -33,8 +34,14 @@ class AnalyzePanda(Panda):
         subset_panda_results = subset_panda_results.rename(columns = {'index': 'gene_index'})
         subset_panda_results = subset_panda_results.drop(['name'], 1)
         links = subset_panda_results[['tf_index', 'gene_index', 'force']]
+        self.__create_plot(unique_genes = unique_genes, links = links, file = file)
+        return None
+    def __create_plot(self, unique_genes, links, file = 'panda.png'):
+        '''Run plot.'''
         #plot
         g = nx.Graph()
+        g.clear()
+        plt.clf()
         g.add_nodes_from(unique_genes['index'])
         edges = []
         for i in range(0, len(links)):
