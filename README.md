@@ -9,6 +9,7 @@ _Glass K, Huttenhower C, Quackenbush J, Yuan GC. Passing Messages Between Biolog
 * [Usage](#usage)  
   * [iPython](#run-from-ipython-notebook)  
   * [Terminal](#run-from-the-terminal)  
+* [Results] (#results)
 
 ### Panda algorithm
 To find agreement between the three input networks first the responsibility (R) is calculated.  
@@ -80,6 +81,11 @@ Save the results:
 ```python
 p.save_panda_results(file = 'Toy_Panda.pairs')
 ```
+Return a network plot:
+```python
+plot = AnalyzePanda(p)
+plot.top_network_plot(top=100, file='top_100_genes.png')
+```
 Calculate indegrees for further analysis:
 ```python
 indegree = p.return_panda_indegree()
@@ -95,4 +101,13 @@ l = Lioness(p)
 Save Lioness results:
 ```python
 l.save_lioness_results(file = 'Toy_Lioness.txt')
+```
+Return a network plot for one of the Lioness single sample networks:
+```python
+plot = AnalyzeLioness(l)
+plot.top_network_plot(column= 0, top=100, file='top_100_genes.png')
+```
+### Results
+```
+test
 ```
