@@ -11,6 +11,7 @@ import math
 class Lioness(Panda):
     def __init__(self, panda_data):
         '''Import values from panda for lioness.'''
+        self.export_panda_results = panda_data.export_panda_results
         self.expression_matrix = panda_data.expression_matrix
         self.motif_data = panda_data.motif_data
         if self.motif_data is not None:
