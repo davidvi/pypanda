@@ -109,5 +109,23 @@ plot.top_network_plot(column= 0, top=100, file='top_100_genes.png')
 ```
 ### Results
 ```
-test
+Example Panda output:
+TF  Gene  Motif Force
+---------------------
+CEBPA	AACSL	0.0	-0.951416589143
+CREB1	AACSL	0.0	-0.904241609324
+DDIT3	AACSL	0.0	-0.956471642313
+E2F1	AACSL	1.0	3.6853160511
+EGR1	AACSL	0.0	-0.695698519643
+
+Example lioness output:
+Sample1 Sample2 Sample3 Sample4
+-------------------------------
+-0.667452814003	-1.70433776179	-0.158129613892	-0.655795512803
+-0.843366539284	-0.733709815256	-0.84849895139	-0.915217389738
+3.23445386464	2.68888472802	3.35809757371	3.05297381396
+2.39500370135	1.84608635425	2.80179804094	2.67540878165
+-0.117475863987	0.494923925853	0.0518448588965	-0.0584810456421
+
+TF, Gene and Motif order is identical to the panda output file. 
 ```
