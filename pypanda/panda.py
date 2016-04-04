@@ -22,7 +22,7 @@ class Panda(object):
         else:
             self.ppi_data = None
         #remove missing befor analysis
-        if remove_missing:
+        if remove_missing and motif_file is not None:
             self.__remove_missing()
         #expression data to matrix
         self.__expression_data_to_matrix()
