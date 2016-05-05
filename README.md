@@ -40,6 +40,7 @@ Hamming distance is calculated every iteration.
 
 
 ### Installation
+PyPanda requires Python 2.7. We recommand the following commands to install PyPanda (on Ubuntu and Debian derived systems):
 ```no-highlight
 git clone https://github.com/davidvi/pypanda.git
 cd pypanda
@@ -127,5 +128,5 @@ Sample1 Sample2 Sample3 Sample4
 2.39500370135	1.84608635425	2.80179804094	2.67540878165
 -0.117475863987	0.494923925853	0.0518448588965	-0.0584810456421
 
-TF, Gene and Motif order is identical to the panda output file. 
+TF, Gene and Motif order is identical to the panda output file.
 ```
