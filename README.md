@@ -51,7 +51,7 @@ sudo python setup.py install
 ```no-highlight
 git clone https://github.com/davidvi/pypanda.git
 cd pypanda
-sudo python setup.py install --user
+python setup.py install --user
 #to run from the command line you will need to make pypanda executable and add the bin directory to your PATH:
 cd bin
 chmod +x pypanda
