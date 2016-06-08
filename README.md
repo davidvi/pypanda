@@ -56,9 +56,14 @@ sudo python setup.py install --user
 cd bin
 chmod +x pypanda
 echo "$(pwd):PATH" >> ~/.bashrc
-source ~/.bashrc 
+source ~/.bashrc
 ```
-
+To run PyPanda from Windows (tested on Windows 10) install Anaconda Python2.7 (https://www.continuum.io/downloads) and from the Anaconda Prompt run:
+```no-highlight
+git clone https://github.com/davidvi/pypanda.git
+dir pypanda
+python setup.py install
+```
 ### Usage
 #### Run from the terminal
 PyPanda can be run directly from the terminal with the following options:
