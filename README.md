@@ -58,7 +58,7 @@ chmod +x pypanda
 echo "$(pwd):PATH" >> ~/.bashrc
 source ~/.bashrc
 ```
-To run PyPanda from Windows (tested on Windows 10) install Anaconda Python2.7 (https://www.continuum.io/downloads) and from the Anaconda Prompt run:
+To run PyPanda from Windows (tested on Windows 10) install Git (https://git-scm.com/downloads) and Anaconda Python2.7 (https://www.continuum.io/downloads) and from the Anaconda Prompt run:
 ```no-highlight
 git clone https://github.com/davidvi/pypanda.git
 cd pypanda
