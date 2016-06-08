@@ -40,11 +40,23 @@ Hamming distance is calculated every iteration.
 
 
 ### Installation
-PyPanda requires Python 2.7. We recommand the following commands to install PyPanda (on Ubuntu and Debian derived systems):
+PyPanda requires Python 2.7. We recommand the following commands to install PyPanda (on Ubuntu and Debian derived systems, also works on OSX):
+#### With root access
 ```no-highlight
 git clone https://github.com/davidvi/pypanda.git
 cd pypanda
 sudo python setup.py install
+```
+#### Without root access
+```no-highlight
+git clone https://github.com/davidvi/pypanda.git
+cd pypanda
+sudo python setup.py install --user
+#to run from the command line you will need to make pypanda executable and add the bin directory to your PATH:
+cd bin
+chmod +x pypanda
+echo "$(pwd):PATH" >> ~/.bashrc
+source ~/.bashrc 
 ```
 
 ### Usage
