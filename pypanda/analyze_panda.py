@@ -15,7 +15,7 @@ class AnalyzePanda(Panda):
         return None
     def top_network_plot(self, top = 100, file = 'panda_top_100.png'):
         '''Select top genes.'''
-        subset_panda_results = self.panda_results.sort(['force'], ascending = [0])
+        subset_panda_results = self.panda_results.sort_values(by=['force'], ascending = False)
         subset_panda_results = subset_panda_results[subset_panda_results.tf != subset_panda_results.gene]
         subset_panda_results = subset_panda_results[0:top]
         self.__shape_plot_network(subset_panda_results = subset_panda_results, file = file)

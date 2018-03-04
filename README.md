@@ -101,6 +101,7 @@ p.save_panda_results(file = 'Toy_Panda.pairs')
 ```
 Return a network plot:
 ```python
+from pypanda.analyze_panda import AnalyzePanda
 plot = AnalyzePanda(p)
 plot.top_network_plot(top=100, file='top_100_genes.png')
 ```
