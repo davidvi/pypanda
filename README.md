@@ -1,3 +1,7 @@
+## Fork description
+I corrected the code after some methods have been deprecated. I added the import for AnalyzePanda in this README. 
+
+
 ## PyPanda (Python Panda)
 Python implementation of PANDA (Passing Attributes between Networks for Data Assimilation)  
 
