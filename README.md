@@ -94,6 +94,8 @@ Import PyPanda library:
 from pypanda import Panda
 from pypanda import Lioness
 import pandas as pd
+from pypanda.analyze_panda import AnalyzePanda
+from pypanda.analyze_lioness import AnalyzeLioness
 ```
 Run Panda algorithm, leave out motif and PPI data to use Pearson correlation network:
 ```python
@@ -105,7 +107,6 @@ p.save_panda_results(file = 'Toy_Panda.pairs')
 ```
 Return a network plot:
 ```python
-from pypanda.analyze_panda import AnalyzePanda
 plot = AnalyzePanda(p)
 plot.top_network_plot(top=100, file='top_100_genes.png')
 ```
