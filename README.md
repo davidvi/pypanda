@@ -1,5 +1,5 @@
 ## Fork description
-I corrected the code after some methods have been deprecated. I added the import for AnalyzePanda in this README. 
+I corrected the code after some methods have been deprecated. I added the import for AnalyzePanda and AnalyzeLioness in this README. 
 
 
 ## PyPanda (Python Panda)
