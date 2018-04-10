@@ -1,3 +1,7 @@
+## Fork description
+I corrected the code after some methods have been deprecated. I added the import for AnalyzePanda and AnalyzeLioness in this README. 
+
+
 ## PyPanda (Python Panda)
 Python implementation of PANDA (Passing Attributes between Networks for Data Assimilation)  
 
@@ -72,7 +76,7 @@ PyPanda can be run directly from the terminal with the following options:
 -e (required) expression values
 -m (optional) pair file of motif edges, when not provided analysis continues with Pearson correlation matrix
 -p (optional) pair file of PPI edges
--f (optional) remove missing values (default is Fales)
+-f (optional) remove missing values (default is False)
 -o (required) output file
 -q (optional) output lioness single sample network
 ```
@@ -90,6 +94,8 @@ Import PyPanda library:
 from pypanda import Panda
 from pypanda import Lioness
 import pandas as pd
+from pypanda.analyze_panda import AnalyzePanda
+from pypanda.analyze_lioness import AnalyzeLioness
 ```
 Run Panda algorithm, leave out motif and PPI data to use Pearson correlation network:
 ```python

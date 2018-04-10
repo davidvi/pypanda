@@ -178,11 +178,11 @@ class Panda(object):
         return None
     def return_panda_indegree(self):
         '''Return Panda indegree.'''
-        subset_indegree = self.export_panda_results[[1,3]]
+        subset_indegree = self.export_panda_results.loc[:,['gene','force']]
         self.panda_indegree = subset_indegree.groupby('gene').sum()
         return self.panda_indegree
     def return_panda_outdegree(self):
         '''Return Panda outdegree.'''
-        subset_outdegree = self.export_panda_results[[0,3]]
+        subset_outdegree = self.export_panda_results.loc[:,['tf','force']]
         self.panda_outdegree = subset_outdegree.groupby('tf').sum()
         return self.panda_outdegree

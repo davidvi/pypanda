@@ -21,3 +21,4 @@ dist/
 test_panda.txt
 test_lioness.txt
 .gitignore
+.idea/
